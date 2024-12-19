@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="desaincss/style.css">
+    <link rel="stylesheet" href="desaincss/upload.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <!--navbar-->
+    <header>
+        <a href="#" class="logo"><i class='bx bxs-basket'></i>Eco shopper</a>
+        <!--menu icon-->
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <!--nav list-->
+        <ul class="navbar">
+            <li><a href="#home" class="home-active">Home</a></li>
+            <li><a href="#categories">Kategori</a></li>
+            <li><a href="#products">Produk</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#customer">Customer</a></li>
+        </ul>
+
+        <!--profil-->
+        <div class="profile">
+            <img src="img/profile.jpg" alt="">
+            <span>Jon Robert</span>
+            <i class='bx bx-caret-down'></i>
+        </div>
+
+    </header>
+    <section class="upload" id="upload">
+        <div class="upload-container">
+            <h1>Upload Produk</h1>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <label for="name">Nama Produk :</label>
+                <input type="text" name="name" id="name" required>
+                <br>
+                <label for="price">Harga :</label>
+                <input type="number" name="price" id="price" required>
+                <br>
+                <label for="stock">Stock :</label>
+                <input type="number" name="stock" id="stock" required>
+                <br>
+                <label for="description">Deskripsi :</label>
+                <textarea name="description" id="description" required></textarea>
+                <br>
+                <label for="image">Upload Gambar :</label>
+                <input type="file" name="image" id="image" required>
+                <br>
+                <button type="submit">Upload</button>
+            </form>
+            <a href="index.php">Back</a>
+    </section>
+    <!--link to js-->
+    <script src="js/main.js"></script>
+</body>
+</html>

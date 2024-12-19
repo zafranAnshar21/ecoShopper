@@ -1,0 +1,81 @@
+.upload-container {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #fef4f4ea;
+    border-radius: 0.5rem;
+    box-shadow: 1px 2px 11px 4px rgba(14, 55, 54, 0.15);
+}
+
+.upload-container h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text--color);
+}
+
+.upload-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-container label {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text--color);
+}
+
+.upload-container input[type="text"],
+.upload-container input[type="number"],
+.upload-container textarea,
+.upload-container input[type="file"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.upload-container textarea {
+    height: 100px;
+    resize: none;
+}
+
+.upload-container button {
+    padding: 0.6rem 1rem;
+    background: var(--green-color);
+    color: var(--bg--color);
+    font-weight: 400;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+    max-width: 160px;
+    cursor: pointer;
+    border: none;
+}
+
+.upload-container button:hover {
+    background: var(--light-green-color);
+    transition: 0.2s ease;
+}
+
+.upload-container a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--text--color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.upload-container a:hover {
+    color: var(--light--orange--color);
+    transition: 0.2s ease;
+}
