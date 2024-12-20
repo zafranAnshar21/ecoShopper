@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+	<title>AdminSite</title>
+	<style>
+		.form-container {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .basic-form {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group label {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+    }
+
+    .file-upload {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .file-upload input[type=file] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+    }
+
+    .file-label {
+        display: inline-block;
+        padding: 0.75rem 1rem;
+        background-color: #4a90e2;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .file-label:hover {
+        background-color: #3a7bc8;
+    }
+
+    .form-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+    .btn:active {
+        transform: translateY(1px);
+    }
+
+    .btn-submit {
+        background-color: #4caf50;
+        color: white;
+    }
+
+    .btn-submit:hover {
+        background-color: #45a049;
+    }
+
+    .btn-cancel {
+        background-color: #f44336;
+        color: white;
+    }
+
+    .btn-cancel:hover {
+        background-color: #da190b;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .form-container {
+            padding: 1.5rem;
+        }
+
+        .form-actions {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .form-container {
+            padding: 1rem;
+        }
+
+        .basic-form {
+            gap: 1rem;
+        }
+    }
+	</style>
+</head>
+<body>
+	
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand"><i class='bx bxs-smile icon'></i> AdminSite</a>
+		<ul class="side-menu">
+			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li class="divider" data-text="main">Main</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i> Elements <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Alert</a></li>
+					<li><a href="#">Badges</a></li>
+					<li><a href="#">Breadcrumbs</a></li>
+					<li><a href="#">Button</a></li>
+				</ul>
+			</li>
+			<li><a href="#"><i class='bx bxs-chart icon' ></i> Charts</a></li>
+			<li><a href="#"><i class='bx bxs-widget icon' ></i> Widgets</a></li>
+			<li class="divider" data-text="table and forms">Table and forms</li>
+			<li><a href="#"><i class='bx bx-table icon' ></i> Tables</a></li>
+			<li>
+				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Basic</a></li>
+					<li><a href="#">Select</a></li>
+					<li><a href="#">Checkbox</a></li>
+					<li><a href="#">Radio</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="ads">
+			<div class="wrapper">
+				<a href="#" class="btn-upgrade">Upgrade</a>
+				<p>Become a <span>PRO</span> member and enjoy <span>All Features</span></p>
+			</div>
+		</div>
+	</section>
+	<!-- SIDEBAR -->
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				<div class="form-group">
+					<input type="text" placeholder="Search...">
+					<i class='bx bx-search icon' ></i>
+				</div>
+			</form>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-bell icon' ></i>
+				<span class="badge">5</span>
+			</a>
+			<a href="#" class="nav-link">
+				<i class='bx bxs-message-square-dots icon' ></i>
+				<span class="badge">8</span>
+			</a>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">Forms</h1>
+			<ul class="breadcrumbs">
+				<li><a href="#">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Forms</a></li>
+			</ul>
+		
+			<div class="form-container">
+				<h2>Basic Form Elements</h2>
+				<p>Basic form elements</p>
+		
+				<form action="#" method="POST" class="basic-form">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" placeholder="Name" class="form-control">
+					</div>
+		
+					<div class="form-group">
+						<label for="email">Email address</label>
+						<input type="email" id="email" name="email" placeholder="Email" class="form-control">
+					</div>
+		
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" placeholder="Password" class="form-control">
+					</div>
+		
+					<div class="form-group">
+						<label for="gender">Gender</label>
+						<select id="gender" name="gender" class="form-control">
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
+		
+					<div class="form-group">
+						<label for="file">File upload</label>
+						<div class="file-upload">
+							<input type="text" placeholder="Upload Image" class="form-control" readonly>
+							<button type="button" class="btn btn-upload">Upload</button>
+						</div>
+					</div>
+		
+					<div class="form-group">
+						<label for="city">City</label>
+						<input type="text" id="city" name="city" placeholder="Location" class="form-control">
+					</div>
+		
+					<div class="form-group">
+						<label for="textarea">Textarea</label>
+						<textarea id="textarea" name="textarea" class="form-control" rows="4"></textarea>
+					</div>
+		
+					<div class="form-actions">
+						<button type="submit" class="btn btn-submit">Submit</button>
+						<button type="button" class="btn btn-cancel">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- NAVBAR -->
+
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script src="script.js"></script>
+</body>
+</html>
